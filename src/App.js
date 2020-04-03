@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import EditTools from './components/EditTools'
+// import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor(props){
+    super(props)
+    this.state ={
+      tools: []
+    }
+    this.addTools = this.addTools.bind(this)
+    this.editTool = this.editTool.bind(this)
+    this.deleteTool = this.deleteTool.bind(this)
+  }
+  componentDidMount(){
+
+  }
+  addTools(tool){
+
+  }
+  editTool(id, newName, newText, newImg){
+
+  }
+  deleteTool(id){
+
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header/>
+        <main>
+        App.js MAIN BODY HERE
+        <EditTools/>
+        </main>
+        <Footer/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
