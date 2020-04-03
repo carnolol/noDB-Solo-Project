@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "text": "A pivitol tool to any woodworkers shop, this allows us to dimenson the lumber perfectly square.",
+        "price": 1100,
+        "name": "Grizzly 8in Jointer",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/519nxYJahbL._AC_SY355_.jpg"
+    },
+    {
+        "id": 2,
+        "text": "Have you heard of this thing? If you hand goes into the blade the blaade will get suck down into a break leaving your figers intact. I want it.",
+        "price": 3300,
+        "name": "SawStop 3hp Professional Cabinet Saw",
+        "img": "https://www.sawstop.com/images/uploads/product/for-educator.png"
+    },
+    {
+        "id": 3,
+        "text": "There are so many things you can do with a bandsaw. They are the tool of choice fo curve cuts & resawing lumber.",
+        "price": 1200,
+        "name": "Grizzly 17in Bandsaw",
+        "img": "https://cdn0.grizzly.com/pics/jpeg500/g/g0513anv-f8df380a097600b6f0f8fcb69e2c93b8.jpg"
+    },
+    {
+        "id": 4,
+        "text": "This thing is $1200? What a joke right. But it is designed to make jointery a total breeze. Worth it.",
+        "price": 1200,
+        "name": "Festool Domino",
+        "img": "https://www.acmetoolstore.com/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/products/full/4327AEC4-642E-4703-B5D7-4679FF58D7D4.jpg"
+    },
+    {
+        "id": 5,
+        "text": "My Dream Workbench, multiple vices for all types of work. Dogholes to hold anything, with a completly flat surfice. Perfect.",
+        "price": 800,
+        "name": "THE DREAM",
+        "img": "https://oldnewsclub.com/wp-content/uploads/2019/12/the-perfect-woodworking-workbench.jpg"
+    }
+]
