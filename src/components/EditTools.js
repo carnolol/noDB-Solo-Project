@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export class EditTools extends Component {
     constructor(props){
         super()
@@ -20,7 +21,7 @@ export class EditTools extends Component {
     render() {
         return (
             <div>
-                Edit Tools.js
+              EditTools.js
             </div>
         )
     }

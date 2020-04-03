@@ -3,39 +3,51 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import EditTools from './components/EditTools'
-// import axios from 'axios'
+import axios from 'axios'
+
 
 export class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state ={
+    this.state = {
       tools: []
     }
     this.addTools = this.addTools.bind(this)
     this.editTool = this.editTool.bind(this)
     this.deleteTool = this.deleteTool.bind(this)
   }
-  componentDidMount(){
+  componentDidMount() {
+    axios.get('/api/tools').then(res => {
+      // console.log(res.data)
+      this.setState({
+        tools: res.data
+      })
+    })
+  }
+  addTools(tool) {
 
   }
-  addTools(tool){
+  editTool(id, newName, newText, newImg) {
 
   }
-  editTool(id, newName, newText, newImg){
-
-  }
-  deleteTool(id){
+  deleteTool(id) {
 
   }
   render() {
+    const allTools = this.state.tools.map(tool => (
+      <div key={tool.id}>
+        <img className="display-image" src={tool.img}/>
+        <h4>{tool.name}</h4>
+        <p>{tool.text}</p>
+        <h4>${tool.price}</h4>
+      </div>
+    ))
     return (
       <div className="App">
-        <Header/>
-        <main>
-        App.js MAIN BODY HERE
-        <EditTools/>
-        </main>
-        <Footer/>
+        <Header />
+        {allTools}
+        <EditTools />
+        <Footer />
       </div>
     )
   }
