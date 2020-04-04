@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.saw-stop{
+  height: 60px;
+  width: 140px;
+  background-color: transparent;
+}
+
 .display-image{
   width: 100px;
   height: 75px;

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import EditTools from './components/EditTools'
+import AddTools from './components/AddTools'
 import axios from 'axios'
 
 
@@ -25,13 +26,21 @@ export class App extends Component {
     })
   }
   addTools(tool) {
-
+    axios.post('/api/tools', tool).then( res => {
+      this.setState({
+        tools: res.data
+      })
+    })
   }
   editTool(id, newName, newText, newImg) {
 
   }
   deleteTool(id) {
-
+    axios.delete(`/api/tools/${id}`).then( res => {
+      this.setState({
+        tools: res.data
+      })
+    })
   }
   render() {
     const allTools = this.state.tools.map(tool => (
@@ -40,12 +49,15 @@ export class App extends Component {
         <h4>{tool.name}</h4>
         <p>{tool.text}</p>
         <h4>${tool.price}</h4>
+        <button onClick={this.deleteTool(tool)}>DELETE TOOL</button>
+        <button>EDIT</button>
       </div>
     ))
     return (
       <div className="App">
         <Header />
         {allTools}
+        <AddTools addTools={this.addTools}/>
         <EditTools />
         <Footer />
       </div>
