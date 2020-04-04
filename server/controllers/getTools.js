@@ -27,6 +27,7 @@ module.exports = {
         tools.push(newTool)
         id++
         res.status(200).send(tools)
+        console.log(req.body, 'Added tool')
  },
     updateTools: (req,res) => {
         const {id} = req.params
@@ -49,7 +50,7 @@ module.exports = {
             return res.status(404).send('TOOL NOT FOUND')
         }
         tools.splice(index, 1)
-        res.status(200).send(tools).catch('WHOOP DER IT IS')
+        res.status(200).send(tools)
         
     }
 }

@@ -16,6 +16,7 @@ export class App extends Component {
     this.addTools = this.addTools.bind(this)
     this.editTool = this.editTool.bind(this)
     this.deleteTool = this.deleteTool.bind(this)
+    this.handleAddTool = this.handleAddTool.bind(this)
   }
   componentDidMount() {
     axios.get('/api/tools').then(res => {
@@ -26,27 +27,38 @@ export class App extends Component {
     })
   }
   addTools(tool) {
-    axios.post('/api/tools', tool).then( res => {
+    axios.post('/api/tools', tool).then(res => {
       this.setState({
         tools: res.data
       })
     })
   }
+  handleAddTool(e) {
+    e.preventDefault()
+    const newTool = {
+      name: this.state.tools.name,
+      text: this.state.tools.text,
+      img: this.state.tools.img,
+      price: this.state.tools.price
+    }
+    this.addTools(newTool)
+    // this.setState({tools: [...this.state.tools, newTool]})
+  }
   editTool(id, newName, newText, newImg) {
 
   }
   deleteTool(id) {
-    axios.delete(`/api/tools/${id}`).then( res => {
+    axios.delete(`/api/tools/${id}`).then(res => {
       this.setState({
         tools: res.data
       })
     })
   }
   render() {
-    // let id = this.state.tools.map(tool => ({tool.id}))
+    console.log(this.state.tools)
     const allTools = this.state.tools.map(tool => (
       <div key={tool.id}>
-        <img className="display-image" src={tool.img}/>
+        <img className="display-image" src={tool.img} alt="tool" />
         <h4>{tool.name}</h4>
         <p>{tool.text}</p>
         <h4>${tool.price}</h4>
@@ -58,7 +70,11 @@ export class App extends Component {
       <div className="App">
         <Header />
         {allTools}
-        <AddTools addTools={this.addTools}/>
+        <AddTools
+          addTools={this.addTools}
+          handleAddTool={this.handleAddTool}
+          tools={this.state.tools}
+        />
         <EditTools />
         <Footer />
       </div>

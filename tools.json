@@ -3,15 +3,15 @@
         "id": 1,
         "text": "A pivitol tool to any woodworkers shop, this allows us to dimenson the lumber perfectly square.",
         "price": 1100,
-        "name": "Grizzly 8in Jointer",
-        "img": "https://images-na.ssl-images-amazon.com/images/I/519nxYJahbL._AC_SY355_.jpg"
+        "name": "JET 8in Jointer",
+        "img": "https://i.makeagif.com/media/3-24-2015/NwnrQl.gif"
     },
     {
         "id": 2,
         "text": "Have you heard of this thing? If your hand goes into the blade the blade will get sucked down into a break leaving your figers intact. I want it.",
         "price": 3300,
         "name": "SawStop 3hp Professional Cabinet Saw",
-        "img": "https://www.sawstop.com/images/uploads/product/for-educator.png"
+        "img": "https://media3.giphy.com/media/ljH3IMwDMvGeHSIB45/giphy.gif?cid=ecf05e479cbde5165ee3b1c5d7224cb801ffc075eb37e139&rid=giphy.gif"
     },
     {
         "id": 3,
@@ -32,6 +32,6 @@
         "text": "My Dream Workbench, multiple vices for all types of work. Dogholes to hold anything, with a completly flat surfice. Perfect.",
         "price": 800,
         "name": "THE DREAM",
-        "img": "https://oldnewsclub.com/wp-content/uploads/2019/12/the-perfect-woodworking-workbench.jpg"
+        "img": "https://media.giphy.com/media/6QpiDxpFoCdbO/giphy.gif"
     }
 ]
