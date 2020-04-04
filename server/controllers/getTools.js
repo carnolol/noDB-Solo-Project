@@ -49,6 +49,7 @@ module.exports = {
             return res.status(404).send('TOOL NOT FOUND')
         }
         tools.splice(index, 1)
-        res.status(200).send(tools)
+        res.status(200).send(tools).catch('WHOOP DER IT IS')
+        
     }
 }

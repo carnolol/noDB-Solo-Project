@@ -43,13 +43,14 @@ export class App extends Component {
     })
   }
   render() {
+    // let id = this.state.tools.map(tool => ({tool.id}))
     const allTools = this.state.tools.map(tool => (
       <div key={tool.id}>
         <img className="display-image" src={tool.img}/>
         <h4>{tool.name}</h4>
         <p>{tool.text}</p>
         <h4>${tool.price}</h4>
-        <button onClick={this.deleteTool(tool)}>DELETE TOOL</button>
+        <button onClick={() => this.deleteTool(tool.id)}>DELETE TOOL</button>
         <button>EDIT</button>
       </div>
     ))
