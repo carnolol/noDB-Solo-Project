@@ -28,7 +28,7 @@ export class EditTools extends Component {
     //     this.props.editTool(this.props.tool.id, this.state.name) // leaving here. .props.tool.id throws and error but .props.id does not. not sure why. 
     //     this.toggleEdit()
     // }
-    handleEditTool(){
+    handleEditTool() {
         const newTool = {
             name: this.state.name,
             text: this.state.text,
@@ -39,20 +39,38 @@ export class EditTools extends Component {
         console.log('WORKING!?!??!')
     }
     render() {
-                        //LEAVING OFF HERE FOR NOW, WHEN TRYING TO EDIT TOOLS IS SAYS "CANNOT READ PROP OF ID OF UNDEFINED"
-        console.log('Name:', this.state.name)
-        console.log('Text:', this.state.text)
-        console.log('Img:', this.state.img)
+        //LEAVING OFF HERE FOR NOW, WHEN TRYING TO EDIT TOOLS IS SAYS "CANNOT READ PROP OF ID OF UNDEFINED"
+        // console.log('Name:', this.state.name)
+        // console.log('Text:', this.state.text)
+        // console.log('Img:', this.state.img)
         return (
             <div>
                 EDIT HERE
                 {this.state.editing ? (
                     <div>
-                        <input name="name" value={this.state.name} onChange={e => this.handleChange(e)} placeholder="New Name" />
-                        <input name="text" value={this.state.text} onChange={e => this.handleChange(e)} placeholder="New Description" />
-                        <input name="img" value={this.state.img} onChange={e => this.handleChange(e)} placeholder="New Image URL" />
-                        <button onClick={this.toggleEdit}>Cancel</button>
-                        <button onClick={() => this.handleEditTool()}>EDIT TOOL NOW</button>
+                        <input
+                            name="name"
+                            value={this.state.name}
+                            onChange={e => this.handleChange(e)}
+                            placeholder="New Name" />
+                        <input
+                            name="text"
+                            value={this.state.text}
+                            onChange={e => this.handleChange(e)}
+                            placeholder="New Description" />
+                        <input
+                            name="img"
+                            value={this.state.img}
+                            onChange={e => this.handleChange(e)}
+                            placeholder="New Image URL" />
+                        <button
+                            className="cancel-addtool"
+                            onClick={this.toggleEdit}>Cancel
+                        </button>
+                        <button
+                            className="add-new-tool-button"
+                            onClick={() => this.handleEditTool()}>EDIT TOOL NOW
+                        </button>
                     </div>
                 ) : <button onClick={this.toggleEdit}>EDIT TOOL</button>
                 }

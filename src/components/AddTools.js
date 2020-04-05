@@ -45,7 +45,7 @@ export class AddTools extends Component {
     render() {
 
         return (
-            <div 
+            <div
                 className="tool-container"
                 onDoubleClick={this.toggleEdit}>
 
@@ -53,38 +53,47 @@ export class AddTools extends Component {
                 {this.state.editing ? (
                     <div onSubmit={this.handleAddTool}>
                         <input
-                             name="name" 
-                             value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name" />
+                            name="name"
+                            value={this.state.name}
+                            onChange={e => this.handleChange(e)}
+                            placeholder="Name" />
                         <input
-                             name="text" 
-                             value={this.state.text} onChange={e => this.handleChange(e)} placeholder="Description" />
+                            name="text"
+                            value={this.state.text}
+                            onChange={e => this.handleChange(e)}
+                            placeholder="Description" />
                         <input
-                             name="img" 
-                             value={this.state.img} onChange={e => this.handleChange(e)} placeholder="Image URL" />
-                        <input 
-                             name="price" 
-                            value={this.state.price} onChange={e => this.handleChange(e)} placeholder="Price" />
-                        <button 
-                             className="cancel-addtool"
-                             onClick={this.toggleEdit}>CANCEL
+                            name="img"
+                            value={this.state.img}
+                            onChange={e => this.handleChange(e)}
+                            placeholder="Image URL" />
+                        <input
+                            name="price"
+                            value={this.state.price}
+                            onChange={e => this.handleChange(e)}
+                            placeholder="Price" />
+                        <button
+                            className="cancel-addtool"
+                            onClick={this.toggleEdit}>CANCEL
                         </button>
-                        <button 
+                        <button
                             className="add-new-tool-button"
                             onClick={() => this.handleAddTool()}>ADD NEW TOOL
                         </button>
                     </div>
                 ) : null
                 }
-                
-                    {/* This is rendering all tools added. */}
 
-                    <img className="display-image" src={this.props.tool.img} alt="tool" />
-                    <h2>{this.props.tool.name}</h2>
-                    <p>{this.props.tool.text}</p>
-                    <h3>${this.props.tool.price}</h3>
-                    <button
-                        className="delete-tool-button" 
-                        onClick={() => this.props.deleteTool(this.props.tool.id)}>DELETE TOOL</button>
+                {/* This is rendering all tools added. */}
+
+                <img className="display-image" src={this.props.tool.img} alt="tool" />
+                <h2>{this.props.tool.name}</h2>
+                <p>{this.props.tool.text}</p>
+                <h3>${this.props.tool.price}</h3>
+                <button
+                    className="delete-tool-button"
+                    onClick={() => this.props.deleteTool(this.props.tool.id)}>DELETE
+                    </button>
             </div>
         )
     }
