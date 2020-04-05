@@ -26,7 +26,7 @@ export class App extends Component {
     })
   }
   addTools (tool){
-    console.log(tool)
+    // console.log(tool)
     axios.post('/api/tools', tool).then(res => {
       this.setState({
         tools: res.data
@@ -34,7 +34,7 @@ export class App extends Component {
       })
     }
   editTool(id, newName) {
-    axios.put(`/api/tools${id}`, {newName}).then(res => {
+    axios.put(`/api/tools/${id}`, {newName}).then(res => {
       this.setState({
         tools: res.data
       })
@@ -55,16 +55,7 @@ export class App extends Component {
         tool={tool}
         deleteTool={this.deleteTool}
         addTools={this.addTools}
-        tools={this.state.tools}
-        editTool={this.editTool}
       />
-        // <img className="display-image" src={tool.img} alt="tool" />
-        // <h4>{tool.name}</h4>
-        // <p>{tool.text}</p>
-        // <h4>${tool.price}</h4>
-        // <button onClick={() => this.deleteTool(tool.id)}>DELETE TOOL</button>
-        // <button>EDIT</button>
-      
     )})
     return (
       <div className="App">

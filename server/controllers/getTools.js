@@ -40,6 +40,7 @@ module.exports = {
         // the ...updatedTool will overide any pre existing keyvalues on the tools object, specificly if they share a property name. if we only want to update the price we can do that without affecting the other key values. 
         tools[index] = {...tools[index], ...updatedTool}
         res.status(200).send(tools)
+        console.log(req.body, 'Edit tool')
     },
     deleteTool: (req, res) => {
         const {id} = req.params

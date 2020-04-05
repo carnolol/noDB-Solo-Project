@@ -28,10 +28,11 @@ export class EditTools extends Component {
         })
     }
     handleEditTool() {
-        this.props.editTool(this.props.id, this.state.name)
+        this.props.editTool(this.props.tool.id, this.state.name) // leaving here. .props.tool.id throws and error but .props.id does not. not sure why. 
         this.toggleEdit()
     }
     render() {
+                        //LEAVING OFF HERE FOR NOW, WHEN TRYING TO EDIT TOOLS IS SAYS "CANNOT READ PROP OF ID OF UNDEFINED"
         return (
             <div>
 
