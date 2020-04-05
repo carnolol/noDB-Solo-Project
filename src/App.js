@@ -11,12 +11,11 @@ export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      tools: []
+      tools: [],
     }
     this.addTools = this.addTools.bind(this)
     this.editTool = this.editTool.bind(this)
     this.deleteTool = this.deleteTool.bind(this)
-    this.handleAddTool = this.handleAddTool.bind(this)
   }
   componentDidMount() {
     axios.get('/api/tools').then(res => {
@@ -26,26 +25,20 @@ export class App extends Component {
       })
     })
   }
-  addTools(tool) {
+  addTools (tool){
+    console.log(tool)
     axios.post('/api/tools', tool).then(res => {
       this.setState({
         tools: res.data
       })
-    })
-  }
-  handleAddTool(e) {
-    e.preventDefault()
-    const newTool = {
-      name: this.state.tools.name,
-      text: this.state.tools.text,
-      img: this.state.tools.img,
-      price: this.state.tools.price
+      })
     }
-    this.addTools(newTool)
-    // this.setState({tools: [...this.state.tools, newTool]})
-  }
-  editTool(id, newName, newText, newImg) {
-
+  editTool(id, newName) {
+    axios.put(`/api/tools${id}`, {newName}).then(res => {
+      this.setState({
+        tools: res.data
+      })
+    })
   }
   deleteTool(id) {
     axios.delete(`/api/tools/${id}`).then(res => {
@@ -55,28 +48,35 @@ export class App extends Component {
     })
   }
   render() {
-    console.log(this.state.tools)
-    const allTools = this.state.tools.map(tool => (
-      <div key={tool.id}>
-        <img className="display-image" src={tool.img} alt="tool" />
-        <h4>{tool.name}</h4>
-        <p>{tool.text}</p>
-        <h4>${tool.price}</h4>
-        <button onClick={() => this.deleteTool(tool.id)}>DELETE TOOL</button>
-        <button>EDIT</button>
-      </div>
-    ))
+    const allTools = this.state.tools.map(tool => {
+      return (
+      <AddTools
+        key={tool.id}
+        tool={tool}
+        deleteTool={this.deleteTool}
+        addTools={this.addTools}
+        tools={this.state.tools}
+        editTool={this.editTool}
+      />
+        // <img className="display-image" src={tool.img} alt="tool" />
+        // <h4>{tool.name}</h4>
+        // <p>{tool.text}</p>
+        // <h4>${tool.price}</h4>
+        // <button onClick={() => this.deleteTool(tool.id)}>DELETE TOOL</button>
+        // <button>EDIT</button>
+      
+    )})
     return (
       <div className="App">
         <Header />
         {allTools}
-        <AddTools
-          addTools={this.addTools}
-          handleAddTool={this.handleAddTool}
+        <EditTools 
           tools={this.state.tools}
+          editTool={this.editTool}
         />
-        <EditTools />
-        <Footer />
+        <Footer 
+          tools={this.state.tools}
+          editTool={this.editTool}/>
       </div>
     )
   }
