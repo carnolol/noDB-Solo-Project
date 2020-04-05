@@ -16,8 +16,8 @@ function Footer (props){
     return (
         <div>
             {toolList}
-            <footer>
-                THIS IS MY FOOTER
+            <footer className="footer">
+                Thank you for looking at my project! I LOVED slamming my head into a wall to get to this point. it really was fun :{')'}
             </footer>
         </div>
     )

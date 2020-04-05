@@ -2,7 +2,6 @@ import './App.css';
 import React, { Component } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import EditTools from './components/EditTools'
 import AddTools from './components/AddTools'
 import axios from 'axios'
 
@@ -31,14 +30,14 @@ export class App extends Component {
       this.setState({
         tools: res.data
       })
-      })
+      }).catch(error => console.log(error))
     }
-  editTool(id, newName) {
-    axios.put(`/api/tools/${id}`, {newName}).then(res => {
+  editTool(id, newTool) {
+    axios.put(`/api/tools/${id}`, {newTool}).then(res => {
       this.setState({
         tools: res.data
       })
-    })
+    }).catch(error => console.log(error))
   }
   deleteTool(id) {
     axios.delete(`/api/tools/${id}`).then(res => {
@@ -58,13 +57,9 @@ export class App extends Component {
       />
     )})
     return (
-      <div className="App">
+      <div className="main-body">
         <Header />
         {allTools}
-        <EditTools 
-          tools={this.state.tools}
-          editTool={this.editTool}
-        />
         <Footer 
           tools={this.state.tools}
           editTool={this.editTool}/>

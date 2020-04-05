@@ -22,15 +22,12 @@ export class AddTools extends Component {
     }
     //this will take info that the user inputs and shoves it into the newly created object. it uses [e.target.name] to target each name="" on all the inputs
     handleChange(e) {
-        // console.log(this.state.text)
-        // console.log(this.state.price)
         this.setState({
             [e.target.name]: e.target.value,
         })
     }
     //this will create a new tool with these properties and shove them into our orginal tool array, the 2nd setState will clear all the input boxes after you type. 
     handleAddTool() {
-        console.log('hit')
         const newTool = {
             name: this.state.name,
             text: this.state.text,
@@ -48,29 +45,46 @@ export class AddTools extends Component {
     render() {
 
         return (
-            <div onDoubleClick={this.toggleEdit}>
+            <div 
+                className="tool-container"
+                onDoubleClick={this.toggleEdit}>
 
                 {/* This will open up a new menu when the ADD button is clicked, allowing the user to add a new tool..  */}
                 {this.state.editing ? (
                     <div onSubmit={this.handleAddTool}>
-                        <input name="name" value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name" />
-                        <input name="text" value={this.state.text} onChange={e => this.handleChange(e)} placeholder="Description" />
-                        <input name="img" value={this.state.img} onChange={e => this.handleChange(e)} placeholder="Image URL" />
-                        <input name="price" value={this.state.price} onChange={e => this.handleChange(e)} placeholder="Price" />
-                        <button onClick={this.toggleEdit}>Cancel</button>
-                        <button onClick={() => this.handleAddTool()}>ADD NEW TOOL</button>
+                        <input
+                             name="name" 
+                             value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name" />
+                        <input
+                             name="text" 
+                             value={this.state.text} onChange={e => this.handleChange(e)} placeholder="Description" />
+                        <input
+                             name="img" 
+                             value={this.state.img} onChange={e => this.handleChange(e)} placeholder="Image URL" />
+                        <input 
+                             name="price" 
+                            value={this.state.price} onChange={e => this.handleChange(e)} placeholder="Price" />
+                        <button 
+                             className="cancel-addtool"
+                             onClick={this.toggleEdit}>CANCEL
+                        </button>
+                        <button 
+                            className="add-new-tool-button"
+                            onClick={() => this.handleAddTool()}>ADD NEW TOOL
+                        </button>
                     </div>
                 ) : null
                 }
                 
-                {/* <button onClick={this.toggleEdit}>ADD</button> */}
-
                     {/* This is rendering all tools added. */}
+
                     <img className="display-image" src={this.props.tool.img} alt="tool" />
                     <h2>{this.props.tool.name}</h2>
                     <p>{this.props.tool.text}</p>
                     <h3>${this.props.tool.price}</h3>
-                    <button onClick={() => this.props.deleteTool(this.props.tool.id)}>DELETE TOOL</button>
+                    <button
+                        className="delete-tool-button" 
+                        onClick={() => this.props.deleteTool(this.props.tool.id)}>DELETE TOOL</button>
             </div>
         )
     }
