@@ -25,6 +25,8 @@
   align-items: center;
   z-index: 1;
   text-shadow: 2px 2px 5px rgb(107, 98, 98);
+  font-family: unset;
+  letter-spacing: 1px;
 }
 
 .tool-container{
@@ -38,7 +40,7 @@
   border-radius: 150px;
   border: 2px solid black;
   background-color: rgb(255, 255, 255, .35);
-  box-shadow:10px 10px 11px black;
+  box-shadow:12px 12px 12px black;
   overflow: hidden;
 }
 
@@ -49,7 +51,7 @@
 }
 
 .tool-image{
-  width: 130px;
+  width: 135px;
   height: 130px;
   margin-left: 12px;
   border: 2px solid black;
@@ -58,18 +60,23 @@
 
 .name-and-text{
   color: white;
-  text-shadow: 5px 5px 6px #000000, 0 0 10px black;;
+  text-shadow: 5px 5px 6px #000000, -2px -2px 5px black, 4px 4px 7px black;
   padding: 10px;
   border: cyan;
 }
 
+.name-of-tool{
+  font-size: 28px;
+}
+
 .text-of-tool{
   width: 53vw;
+  font-size: 17px;
 }
 
 .tool-price{
   padding: 20px;
-  text-shadow: 4px 4px 6px #000000, 0 0 8px greenyellow;
+  text-shadow: 4px 4px 6px #000000, 4px 4px 8px greenyellow, -4px -4px 8px greenyellow;
 }
 
 .delete-tool-button{
