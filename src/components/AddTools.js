@@ -58,7 +58,7 @@ export class AddTools extends Component {
 
                 {/* This will open up a new menu when the ADD button is clicked, allowing the user to add a new tool..  */}
                 {this.state.editing ? (
-                    <div 
+                    <div
                         className="toggle-inputs"
                         onSubmit={this.handleAddTool}>
                         <input
@@ -98,23 +98,31 @@ export class AddTools extends Component {
                 }
 
                 {/* This is rendering all tools added. */}
-
-                <img 
-                    className="display-image" 
-                    src={this.props.tool.img} 
-                    alt="tool" 
-                />
-                <div className="name-and-text">
-                    <h2>{this.props.tool.name}</h2>
-                    <p>{this.props.tool.text}</p>
+                <div>
+                    <img
+                        className="tool-image"
+                        src={this.props.tool.img}
+                        alt="tool"
+                    />
                 </div>
-                <h3 
-                    className="tool-price">${this.props.tool.price}
-                </h3>
-                <button
-                    className="delete-tool-button"
-                    onClick={() => this.props.deleteTool(this.props.tool.id)}>DELETE
-                </button>
+                <div className="name-and-text">
+                    <h2 className="name-of-tool">
+                        {this.props.tool.name}
+                    </h2>
+                    <br></br>
+                    <p className="text-of-tool">{this.props.tool.text}</p>
+                </div>
+                <div>
+                    <h2
+                        className="tool-price">${this.props.tool.price}
+                    </h2>
+                </div>
+                <div>
+                    <button
+                        className="delete-tool-button"
+                        onClick={() => this.props.deleteTool(this.props.tool.id)}>Delete {this.props.tool.id}
+                    </button>
+                </div>
             </div>
         )
     }

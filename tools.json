@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "text": "A pivitol tool to any woodworkers shop, this allows us to dimenson the lumber perfectly square.",
+        "text": "Have you ever tried to make something with lumber that wasnt perfectly flat and square? Thats why you need this! A pivitol tool to any woodworkers shop, this allows us to dimenson the lumber perfectly square.",
         "price": 1100,
         "name": "JET 8in Jointer",
         "img": "https://i.makeagif.com/media/3-24-2015/NwnrQl.gif"
@@ -22,14 +22,14 @@
     },
     {
         "id": 4,
-        "text": "This thing is $1200? What a joke right. But it is designed to make jointery a total breeze. Worth it.",
+        "text": "This thing is $1200? What a joke right? It cuts holes in wood to make quick and perfect mortise and tennon jointery every time. This tool is one of the ultimate time savers. Worth it.",
         "price": 1200,
         "name": "Festool Domino",
         "img": "https://www.acmetoolstore.com/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/products/full/4327AEC4-642E-4703-B5D7-4679FF58D7D4.jpg"
     },
     {
         "id": 5,
-        "text": "My Dream Workbench, multiple vices for all types of work. Dogholes to hold anything, with a completly flat surfice. Perfect.",
+        "text": "A good workbench is the heart of any woodshop. This would be my Dream Workbench, multiple vices for all types of work. Dogholes to hold anything, with a completly flat surfice. Perfect.",
         "price": 800,
         "name": "THE DREAM",
         "img": "https://media.giphy.com/media/6QpiDxpFoCdbO/giphy.gif"

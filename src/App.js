@@ -32,8 +32,8 @@ export class App extends Component {
       })
       }).catch(error => console.log(error))
     }
-  editTool(id, newTool) {
-    axios.put(`/api/tools/${id}`, {newTool}).then(res => {
+  editTool(id, updatedTool) {
+    axios.put(`/api/tools/${id}`, {updatedTool}).then(res => {
       this.setState({
         tools: res.data
       })

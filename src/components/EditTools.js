@@ -24,25 +24,18 @@ export class EditTools extends Component {
             [e.target.name]: e.target.value,
         })
     }
-    // handleEditTool() {
-    //     this.props.editTool(this.props.tool.id, this.state.name) // leaving here. .props.tool.id throws and error but .props.id does not. not sure why. 
-    //     this.toggleEdit()
-    // }
     handleEditTool() {
-        const newTool = {
+        const updatedTool = {
             name: this.state.name,
             text: this.state.text,
             img: this.state.img
         }
-        this.props.editTool(this.props.tool.id, newTool)
+        // We have to make sure the variable we pass into .props.editTool() is the same variable we did on our backend.
+        this.props.editTool(this.props.tool.id, updatedTool)
         this.toggleEdit()
         console.log('WORKING!?!??!')
     }
     render() {
-        //LEAVING OFF HERE FOR NOW, WHEN TRYING TO EDIT TOOLS IS SAYS "CANNOT READ PROP OF ID OF UNDEFINED"
-        // console.log('Name:', this.state.name)
-        // console.log('Text:', this.state.text)
-        // console.log('Img:', this.state.img)
         return (
             <div>
                 {this.state.editing ? (
@@ -71,10 +64,14 @@ export class EditTools extends Component {
                             onClick={() => this.handleEditTool()}>EDIT TOOL NOW
                         </button>
                     </div>
-                ) : <button      
-                        className="add-new-tool-button"
-                        onClick={this.toggleEdit}>EDIT TOOL
-                    </button>
+                ) : (
+                        <div className="edit-bottem">
+                            <button
+                                className="add-new-tool-button"
+                                onClick={this.toggleEdit}>EDIT TOOL {this.props.tool.id}
+                            </button>
+                        </div>
+                    )
                 }
             </div>
         )
