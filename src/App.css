@@ -95,6 +95,7 @@
 
 .delete-tool-button:hover{
   background-color: crimson;
+  color: white;
 }
 
 .toggle-inputs{
