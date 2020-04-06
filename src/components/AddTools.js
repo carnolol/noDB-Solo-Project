@@ -87,9 +87,13 @@ export class AddTools extends Component {
                 {/* This is rendering all tools added. */}
 
                 <img className="display-image" src={this.props.tool.img} alt="tool" />
-                <h2>{this.props.tool.name}</h2>
-                <p>{this.props.tool.text}</p>
-                <h3>${this.props.tool.price}</h3>
+                <div className="name-and-text">
+                    <h2>{this.props.tool.name}</h2>
+                    <p>{this.props.tool.text}</p>
+                </div>
+                <h3 
+                    className="tool-price">${this.props.tool.price}
+                </h3>
                 <button
                     className="delete-tool-button"
                     onClick={() => this.props.deleteTool(this.props.tool.id)}>DELETE

@@ -11,9 +11,9 @@ function Header (){
                     alt="best-tool"/>
                 Mike's Tool Garage 
                 <img
-                    alt="saw"
                     className="saw-stop" 
                     src="https://www.sawstop.com/images/uploads/product/for-educator.png"
+                    alt="best-tool"
                 />
             </h1>
         </div>
