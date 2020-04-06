@@ -26,6 +26,12 @@ export class AddTools extends Component {
             [e.target.name]: e.target.value,
         })
     }
+    //Because we are using .reduce we have to be sure to parse the incoming data!!
+    handleAddPrice(e) {
+        this.setState({
+            [e.target.name]: +e.target.value,
+        })
+    }
     //this will create a new tool with these properties and shove them into our orginal tool array, the 2nd setState will clear all the input boxes after you type. 
     handleAddTool() {
         const newTool = {
@@ -35,6 +41,7 @@ export class AddTools extends Component {
             price: this.state.price
         }
         this.props.addTools(newTool)
+        this.toggleEdit()
         this.setState({
             name: "",
             text: "",
@@ -51,26 +58,32 @@ export class AddTools extends Component {
 
                 {/* This will open up a new menu when the ADD button is clicked, allowing the user to add a new tool..  */}
                 {this.state.editing ? (
-                    <div onSubmit={this.handleAddTool}>
+                    <div 
+                        className="toggle-inputs"
+                        onSubmit={this.handleAddTool}>
                         <input
+                            className="add-tool-input"
                             name="name"
                             value={this.state.name}
                             onChange={e => this.handleChange(e)}
                             placeholder="Name" />
                         <input
+                            className="add-tool-input"
                             name="text"
                             value={this.state.text}
                             onChange={e => this.handleChange(e)}
                             placeholder="Description" />
                         <input
+                            className="add-tool-input"
                             name="img"
                             value={this.state.img}
                             onChange={e => this.handleChange(e)}
                             placeholder="Image URL" />
                         <input
+                            className="add-tool-input"
                             name="price"
                             value={this.state.price}
-                            onChange={e => this.handleChange(e)}
+                            onChange={e => this.handleAddPrice(e)}
                             placeholder="Price" />
                         <button
                             className="cancel-addtool"
@@ -86,7 +99,11 @@ export class AddTools extends Component {
 
                 {/* This is rendering all tools added. */}
 
-                <img className="display-image" src={this.props.tool.img} alt="tool" />
+                <img 
+                    className="display-image" 
+                    src={this.props.tool.img} 
+                    alt="tool" 
+                />
                 <div className="name-and-text">
                     <h2>{this.props.tool.name}</h2>
                     <p>{this.props.tool.text}</p>
@@ -97,7 +114,7 @@ export class AddTools extends Component {
                 <button
                     className="delete-tool-button"
                     onClick={() => this.props.deleteTool(this.props.tool.id)}>DELETE
-                    </button>
+                </button>
             </div>
         )
     }

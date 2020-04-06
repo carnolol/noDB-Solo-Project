@@ -45,7 +45,6 @@ export class EditTools extends Component {
         // console.log('Img:', this.state.img)
         return (
             <div>
-                EDIT HERE
                 {this.state.editing ? (
                     <div>
                         <input
@@ -72,7 +71,10 @@ export class EditTools extends Component {
                             onClick={() => this.handleEditTool()}>EDIT TOOL NOW
                         </button>
                     </div>
-                ) : <button onClick={this.toggleEdit}>EDIT TOOL</button>
+                ) : <button      
+                        className="add-new-tool-button"
+                        onClick={this.toggleEdit}>EDIT TOOL
+                    </button>
                 }
             </div>
         )

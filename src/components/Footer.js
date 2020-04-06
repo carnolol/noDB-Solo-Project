@@ -21,9 +21,9 @@ function Footer (props){
     
     return (
         <div>
-            <h3 className="sum-of-price">
+            <h1 className="sum-of-price">
                  How much money do I need to buy these tools? DIS MUCH: ${sum}
-            </h3>
+            </h1>
         {toolList}
             <footer className="footer">
                 Thank you for looking at my project! I LOVED slamming my head into a wall to get to this point. it really was fun :{')'}

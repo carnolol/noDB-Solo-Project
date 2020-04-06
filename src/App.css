@@ -72,34 +72,40 @@
 }
 
 .delete-tool-button:hover{
-  border: 4px solid crimson;
   background-color: crimson;
 }
 
-
+.toggle-inputs{
+  transition: all .5s;
+}
 
 input{
-  padding: 3px;
+  padding: 2px;
+  border-radius: 5px;
+  margin: 3px;
 }
 
 .cancel-addtool{
+  border-radius: 10px;
   background-color: skyblue;
   font-weight: bold;
   border: 2px solid black;
   padding: 3px;
-
+  margin: 3px;
 }
 
 .add-new-tool-button{
-  background-color: springgreen;
+  border-radius: 10px;
+  background-color: rgba(30, 196, 113, 0.815);
   font-weight: bold;
   border: 2px solid black;
   padding: 3px;
+  margin: 3px;
 }
 
 
 button{
-  cursor: crosshair;  
+  cursor: pointer;  
 }
 
 .display-image{
@@ -109,6 +115,7 @@ button{
 }
 
 .sum-of-price{
+  text-shadow: 4px 4px 6px #000000, 0 0 5px darkblue;;
   font-weight: bold;
   color: white;
   padding: 20px;
@@ -122,5 +129,6 @@ button{
   justify-content: center;
   align-items: center;
   font-weight: bold;
+ 
 }
 
